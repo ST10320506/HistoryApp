@@ -3,39 +3,39 @@ package vcmsa.ci.historyapp
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class WelcomeScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_welcome_screen)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }//end of ViewCompat
 
-        //Declaring GUI variables
-        val edtName = findViewById<EditText>(R.id.edtName)
-        val btnNextPage = findViewById<Button>(R.id.btnNextPage)
+        //declaring variable used from main activity
+        val intent: Intent = intent
+        val name = intent.getStringExtra("name")
 
-        //getting data from the user
-        //Reference: coding up quiz app
-        val name = edtName.text.toString()
+        //Declaring GUI variables
+        val tvWelcomeName = findViewById<TextView>(R.id.tvWelcomeName)
+        val btnStartQuiz = findViewById<Button>(R.id.btnStartQuiz)
+
+        //displays personalized welcome message to the user
+        tvWelcomeName.text = "Welcome $name !"
 
         //navigate to the next page
-        btnNextPage.setOnClickListener {
-            //passing data of 'name' to the next screen
-            //reference:
-            val intent = Intent(this, WelcomeScreen::class.java)
-            intent.putExtra("name", name)
+        btnStartQuiz.setOnClickListener {
+            val intent = Intent(this, Flashcards::class.java)
             startActivity(intent)
             finish()
         }
     }//end of onCreate
-}//end of MainActivity
+}//end of WelcomeScreen

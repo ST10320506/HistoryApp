@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelcomeScreen" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,9 +18,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imgBackground"
-            android:layout_width="440dp"
-            android:layout_height="736dp"
+            android:id="@+id/imgBackgroundTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,49 +28,48 @@
             app:srcCompat="@drawable/mapbackground" />
 
         <TextView
-            android:id="@+id/tvWelcomeHeading"
-            android:layout_width="347dp"
-            android:layout_height="87dp"
+            android:id="@+id/tvWelcomeName"
+            android:layout_width="314dp"
+            android:layout_height="71dp"
             android:layout_marginTop="124dp"
             android:background="#F5F7FA"
             android:fontFamily="@font/archivo_medium"
-            android:text="Welcome to the History App"
+            android:text="Welcome &quot;Name&quot;"
             android:textAlignment="center"
             android:textColor="#99662F"
             android:textSize="34sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imgBackground" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/edtName"
-            android:layout_width="219dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="128dp"
-            android:background="#F5F7FA"
-            android:backgroundTint="#FAF0E4"
-            android:ems="10"
-            android:hint="Enter your name:"
-            android:inputType="text"
+        <TextView
+            android:id="@+id/tvAppDescription"
+            android:layout_width="382dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="124dp"
+            android:background="#FAF0E4"
+            android:text="The History App was designed to help users study with flashcards, there are five questions with 'true/false' answers that need to be ticked. At the end of the flashcards you will be scored out of 5 and you will receive feedback. Enjoy!"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.448"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvWelcomeHeading" />
+            app:layout_constraintTop_toBottomOf="@+id/tvWelcomeName" />
 
         <Button
-            android:id="@+id/btnNextPage"
-            android:layout_width="167dp"
-            android:layout_height="67dp"
-            android:layout_marginTop="128dp"
+            android:id="@+id/btnStartQuiz"
+            android:layout_width="175dp"
+            android:layout_height="69dp"
+            android:layout_marginTop="84dp"
             android:backgroundTint="#99662F"
-            android:text="Next Page"
+            android:text="Start Quiz"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtName" />
+            app:layout_constraintTop_toBottomOf="@+id/tvAppDescription" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
