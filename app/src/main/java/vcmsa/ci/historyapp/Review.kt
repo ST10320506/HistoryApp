@@ -1,6 +1,8 @@
 package vcmsa.ci.historyapp
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +17,11 @@ class Review : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
-    }
-}
+        }//end of ViewCompat
+
+        //Declaring GUI variables
+        val tvReview = findViewById<TextView>(R.id.tvReview)
+        val btnExitApp = findViewById<Button>(R.id.btnExitApp)
+
+    }//end of onCreate
+}//end of Review Activity

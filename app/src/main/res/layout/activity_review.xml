@@ -7,4 +7,46 @@
     android:layout_height="match_parent"
     tools:context=".Review">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/imgBackgroundFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/mapbackground" />
+
+        <Button
+            android:id="@+id/btnExitApp"
+            android:layout_width="163dp"
+            android:layout_height="65dp"
+            android:backgroundTint="#99662F"
+            android:text="Exit App"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="529dp" />
+
+        <TextView
+            android:id="@+id/tvReview"
+            android:layout_width="301dp"
+            android:layout_height="126dp"
+            android:background="#FAF0E4"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="182dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
