@@ -28,10 +28,12 @@ class Flashcards : AppCompatActivity() {
         val tvHistoryQuestions = findViewById<TextView>(R.id.tvHistoryQuestions)
         val radioGroupAnswers = findViewById<RadioGroup>(R.id.rdgrpAnswers)
         val btnNextQuestion = findViewById<Button>(R.id.btnNextQuestion)
+        //Declaring the name variable passed from the Welcome screen
+        //Reference: https://youtu.be/K13fR2RHTak - Liehan Els, 2025. Coding up the Quiz app with lots of debugging. [video online] Available at: <https://youtu.be/K13fR2RHTak> [Accessed 21 May 2025].
         val intent: Intent = intent
         val name = intent.getStringExtra("name")
 
-        //Array created for the history questions and answers
+        //Array created for the history questions, answers and users answer choices
         //Reference: https://github.com/liehanels/QuizzApp - Liehan Els, 2025. Liehan had written code to show how to create an array. [online] Available at: <https://github.com/liehanels/QuizzApp> [Accessed 21 May 2025].
         //Reference: https://youtu.be/K13fR2RHTak - Liehan Els, 2025. Coding up the Quiz app with lots of debugging. [video online] Available at: <https://youtu.be/K13fR2RHTak> [Accessed 21 May 2025].
 
@@ -54,6 +56,7 @@ class Flashcards : AppCompatActivity() {
         )
 
         //Array to store the users answers
+        //Reference: https://youtu.be/K13fR2RHTak - Liehan Els, 2025. Coding up the Quiz app with lots of debugging. [video online] Available at: <https://youtu.be/K13fR2RHTak> [Accessed 21 May 2025].
         var userAnswers = arrayOfNulls<String>(5)
 
         //Array of the correct answers to the history questions
@@ -65,6 +68,7 @@ class Flashcards : AppCompatActivity() {
             "False"
         )
 
+        //Reference: https://youtu.be/K13fR2RHTak - Liehan Els, 2025. Coding up the Quiz app with lots of debugging. [video online] Available at: <https://youtu.be/K13fR2RHTak> [Accessed 21 May 2025].
         //Counter variable to track the questions the user answered correctly
         var counter = 0
         //Score variable to track the users score as they answer the questions
@@ -81,6 +85,7 @@ class Flashcards : AppCompatActivity() {
         }
 
         //Declaring the next question button function so when it's clicked it will go through and display each question
+        //Reference: https://youtu.be/K13fR2RHTak - Liehan Els, 2025. Coding up the Quiz app with lots of debugging. [video online] Available at: <https://youtu.be/K13fR2RHTak> [Accessed 21 May 2025].
         btnNextQuestion.setOnClickListener {
             if (counter < 5) {
 
@@ -90,9 +95,12 @@ class Flashcards : AppCompatActivity() {
                 if (selectedAnswer != -1) {
                     val selectedRbtn = findViewById<RadioButton>(selectedAnswer)
                     userAnswers[counter] = selectedRbtn.text.toString()
+                    //Log statement used to check the users answers using Logcat
                     Log.d("userAnswer", userAnswers[counter].toString())
+                    //Counter variable is used to display the next question
                     counter++
                 } else {
+                    //Toast message displayed if the user hasn't selected an answer
                     Toast.makeText(this, "Please select an answer", Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
                 }
@@ -109,7 +117,7 @@ class Flashcards : AppCompatActivity() {
                 } else {
                     for (i in 0 until 5) {
                         if (userAnswers[i] == historyAnswers[i]) {
-                            //score is used to check if the users answers match the history answers
+                            //Score variable is used to check if the users answers match the history answers
                             score++
                         }
                     }
@@ -119,6 +127,7 @@ class Flashcards : AppCompatActivity() {
                     //Intent code used to navigate from the flashcard screen to the score screen once all the questions have been answered
                     //Reference: https://youtu.be/K13fR2RHTak - Liehan Els, 2025. Coding up the Quiz app with lots of debugging. [video online] Available at: <https://youtu.be/K13fR2RHTak> [Accessed 21 May 2025].
                     val intent = Intent(this, Score::class.java)
+                        //Carries all the data declared to the score screen
                         .putExtra("score", score)
                         .putExtra("name", name)
                         .putExtra("historyQuestions", historyQuestions)
@@ -132,7 +141,7 @@ class Flashcards : AppCompatActivity() {
                 if (userAnswers[check] == historyAnswers[check]) {
                     //Toast message displays correct if the user chooses the correct answer
                     Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show()
-                    //check is used to check if the users answers match the history answers
+                    //Check is used to check if the users answers match the history answers
                     check++
                 } else {
                     //Toast message displays incorrect if the user chooses the incorrect answer

@@ -20,7 +20,8 @@ class WelcomeScreen : AppCompatActivity() {
             insets
         }//end of ViewCompat
 
-        //Declaring variable used from main activity
+        //Declaring name variable passed from Main activity
+        //Reference: https://youtu.be/K13fR2RHTak - Liehan Els, 2025. Coding up the Quiz app with lots of debugging. [video online] Available at: <https://youtu.be/K13fR2RHTak> [Accessed 21 May 2025].
         val intent: Intent = intent
         val name = intent.getStringExtra("name")
 
@@ -28,12 +29,14 @@ class WelcomeScreen : AppCompatActivity() {
         val tvWelcomeName = findViewById<TextView>(R.id.tvWelcomeName)
         val btnStartQuiz = findViewById<Button>(R.id.btnStartQuiz)
 
-        //Displays personalized welcome message to the user****
+        //Displays personalized welcome message to the user
         tvWelcomeName.text = "Welcome ${name ?: "User"}!"
 
-        //Navigate to the next page
+        //Navigate to the Flashcards page
+        //Reference: https://youtu.be/K13fR2RHTak - Liehan Els, 2025. Coding up the Quiz app with lots of debugging. [video online] Available at: <https://youtu.be/K13fR2RHTak> [Accessed 21 May 2025].
         btnStartQuiz.setOnClickListener {
             val intent = Intent(this, Flashcards::class.java)
+            //Carries the name variable to the Flashcards screen when navigating to the Flashcards screen
             intent.putExtra("name", name)
             startActivity(intent)
             finish()

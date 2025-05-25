@@ -27,20 +27,24 @@ class MainActivity : AppCompatActivity() {
 
         btnNextPage.setOnClickListener {
             //Getting data from the user
-            //Reference: coding up quiz app
+            //Reference: https://youtu.be/K13fR2RHTak - Liehan Els, 2025. Coding up the Quiz app with lots of debugging. [video online] Available at: <https://youtu.be/K13fR2RHTak> [Accessed 21 May 2025].
             val name = edtName.text.toString()
 
-            //check if name is empty
+            //Checks if the name variable is empty
+            //Reference: https://youtu.be/K13fR2RHTak - Liehan Els, 2025. Coding up the Quiz app with lots of debugging. [video online] Available at: <https://youtu.be/K13fR2RHTak> [Accessed 21 May 2025].
             if(name.isEmpty()){
                 //Display a toast message if the user hasn't entered their name
                 Toast.makeText(this, "Please enter your name", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            //start next page
+            //Navigate to the Welcome page once the user has entered their name
+            //Reference: https://youtu.be/K13fR2RHTak - Liehan Els, 2025. Coding up the Quiz app with lots of debugging. [video online] Available at: <https://youtu.be/K13fR2RHTak> [Accessed 21 May 2025].
             val intent = Intent(this, WelcomeScreen::class.java)
+            //This is to carry the name variable to the next screen when navigating to the Welcome screen
             intent.putExtra("name", name)
             startActivity(intent)
             finish()
         }
+
     }//end of onCreate
 }//end of MainActivity

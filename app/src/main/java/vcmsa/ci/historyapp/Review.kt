@@ -24,6 +24,7 @@ class Review : AppCompatActivity() {
         val tvReview = findViewById<TextView>(R.id.tvReview)
         val btnExitApp = findViewById<Button>(R.id.btnExitApp)
 
+        //Intent passes the data from the score screen to the review screen
         val intent: Intent = intent
         val historyQuestions = intent.getStringArrayExtra("historyQuestions")
         val historyAnswers = intent.getStringArrayExtra("historyAnswers")
@@ -35,12 +36,13 @@ class Review : AppCompatActivity() {
                     append("${historyQuestions[i]} \nAnswer: ${historyAnswers[i]}\n\n")
                 }
             }
-            //displays array
+            //displays array of history questions and answers on the review screen
             tvReview.text = combinedArray
         } else {
+            //displays 'no data given' if the array is empty
             tvReview.text = "No data given"
         }
-        //Declaring the exit button to exit the app
+        //Declaring the exit button to terminate the app when clicked
         btnExitApp.setOnClickListener {
             finish()
         }
