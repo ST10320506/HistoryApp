@@ -23,5 +23,9 @@ class Review : AppCompatActivity() {
         val tvReview = findViewById<TextView>(R.id.tvReview)
         val btnExitApp = findViewById<Button>(R.id.btnExitApp)
 
+        //Declaring the exit button to exit the app
+        btnExitApp.setOnClickListener {
+            finish()
+        }
     }//end of onCreate
 }//end of Review Activity

@@ -34,6 +34,7 @@ class WelcomeScreen : AppCompatActivity() {
         //Navigate to the next page
         btnStartQuiz.setOnClickListener {
             val intent = Intent(this, Flashcards::class.java)
+            intent.putExtra("name", name)
             startActivity(intent)
             finish()
         }

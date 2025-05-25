@@ -28,6 +28,8 @@ class Flashcards : AppCompatActivity() {
         val tvHistoryQuestions = findViewById<TextView>(R.id.tvHistoryQuestions)
         val radioGroupAnswers = findViewById<RadioGroup>(R.id.rdgrpAnswers)
         val btnNextQuestion = findViewById<Button>(R.id.btnNextQuestion)
+        val intent: Intent = intent
+        val name = intent.getStringExtra("name")
 
         //Array created for the history questions and answers
         //Reference: https://github.com/liehanels/QuizzApp - Liehan Els, 2025. Liehan had written code to show how to create an array. [online] Available at: <https://github.com/liehanels/QuizzApp> [Accessed 21 May 2025].
@@ -118,6 +120,7 @@ class Flashcards : AppCompatActivity() {
                     //Reference: https://youtu.be/K13fR2RHTak - Liehan Els, 2025. Coding up the Quiz app with lots of debugging. [video online] Available at: <https://youtu.be/K13fR2RHTak> [Accessed 21 May 2025].
                     val intent = Intent(this, Score::class.java)
                         .putExtra("score", score)
+                        .putExtra("name", name)
                     startActivity(intent)
                     finish()
                 }

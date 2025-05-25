@@ -31,22 +31,42 @@
             android:id="@+id/btnExitApp"
             android:layout_width="163dp"
             android:layout_height="65dp"
+            android:layout_marginTop="68dp"
             android:backgroundTint="#99662F"
             android:text="Exit App"
             android:textSize="20sp"
-            tools:layout_editor_absoluteX="124dp"
-            tools:layout_editor_absoluteY="529dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvReview" />
 
         <TextView
             android:id="@+id/tvReview"
-            android:layout_width="301dp"
-            android:layout_height="126dp"
+            android:layout_width="395dp"
+            android:layout_height="347dp"
+            android:layout_marginTop="48dp"
             android:background="#FAF0E4"
-            android:text="TextView"
+            android:text="Array"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="italic"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="182dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvReviewTitle" />
+
+        <TextView
+            android:id="@+id/tvReviewTitle"
+            android:layout_width="385dp"
+            android:layout_height="91dp"
+            android:layout_marginTop="84dp"
+            android:background="#F5F7FA"
+            android:fontFamily="@font/archivo_medium"
+            android:text="Review Questions and Answers"
+            android:textAlignment="center"
+            android:textColor="#99662F"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

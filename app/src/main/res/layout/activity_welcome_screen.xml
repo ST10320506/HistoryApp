@@ -29,8 +29,8 @@
 
         <TextView
             android:id="@+id/tvWelcomeName"
-            android:layout_width="363dp"
-            android:layout_height="100dp"
+            android:layout_width="378dp"
+            android:layout_height="93dp"
             android:layout_marginTop="124dp"
             android:background="#F5F7FA"
             android:fontFamily="@font/archivo_medium"
@@ -47,14 +47,14 @@
             android:id="@+id/tvAppDescription"
             android:layout_width="390dp"
             android:layout_height="149dp"
-            android:layout_marginTop="124dp"
+            android:layout_marginTop="72dp"
             android:background="#FAF0E4"
             android:text="The History App was designed to help users study with flashcards, there are five questions with 'true/false' answers that need to be ticked. At the end of the flashcards you will be scored out of 5 and you will receive feedback. Enjoy!"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.448"
+            app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvWelcomeName" />
 

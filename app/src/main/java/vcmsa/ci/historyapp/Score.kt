@@ -22,6 +22,7 @@ class Score : AppCompatActivity() {
 
         //Declaring the GUI variables
         val tvScore = findViewById<TextView>(R.id.tvScore)
+        val tvMessage = findViewById<TextView>(R.id.tvMessage)
         val btnExit = findViewById<Button>(R.id.btnExit)
         val btnReviewAnswers = findViewById<Button>(R.id.btnReviewAnswers)
 
@@ -29,6 +30,15 @@ class Score : AppCompatActivity() {
         //Reference: https://youtu.be/K13fR2RHTak - Liehan Els, 2025. Coding up the Quiz app with lots of debugging. [video online] Available at: <https://youtu.be/K13fR2RHTak> [Accessed 21 May 2025].
         val score = intent.getIntExtra("score", 0)
         tvScore.text = "Your score is $score out of 5"
+
+        val intent: Intent = intent
+        val name = intent.getStringExtra("name")
+        if(score == 5) {
+            tvMessage.text = "Congratulations ${name ?: "User"}!"
+        }
+        else{
+            tvMessage.text = "Better luck next time ${name ?: "User"}."
+        }
 
         //Declaring the exit button to exit the app once clicked
         btnExit.setOnClickListener {
