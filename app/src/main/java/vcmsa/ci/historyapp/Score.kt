@@ -26,6 +26,10 @@ class Score : AppCompatActivity() {
         val btnExit = findViewById<Button>(R.id.btnExit)
         val btnReviewAnswers = findViewById<Button>(R.id.btnReviewAnswers)
 
+        //AI used**
+        val historyQuestions = intent.getStringArrayExtra("historyQuestions")
+        val historyAnswers = intent.getStringArrayExtra("historyAnswers")
+
         //Intent is created to pass and display the users score on the score page
         //Reference: https://youtu.be/K13fR2RHTak - Liehan Els, 2025. Coding up the Quiz app with lots of debugging. [video online] Available at: <https://youtu.be/K13fR2RHTak> [Accessed 21 May 2025].
         val score = intent.getIntExtra("score", 0)
@@ -33,11 +37,13 @@ class Score : AppCompatActivity() {
 
         val intent: Intent = intent
         val name = intent.getStringExtra("name")
-        if(score == 5) {
-            tvMessage.text = "Congratulations ${name ?: "User"}!"
+
+        //AI used**
+        if(score in 3..5) {
+            tvMessage.text = "Great Job ${name ?: "User"}!"
         }
         else{
-            tvMessage.text = "Better luck next time ${name ?: "User"}."
+            tvMessage.text = "Keep practising ${name ?: "User"}."
         }
 
         //Declaring the exit button to exit the app once clicked
@@ -48,6 +54,8 @@ class Score : AppCompatActivity() {
         //Declaring the review answers button to navigate to the review screen once clicked
         btnReviewAnswers.setOnClickListener {
             val intent = Intent(this, Review::class.java)
+                .putExtra("historyQuestions", historyQuestions)
+                .putExtra("historyAnswers", historyAnswers)
             startActivity(intent)
             finish()
         }

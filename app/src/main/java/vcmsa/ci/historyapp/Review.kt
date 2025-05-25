@@ -1,5 +1,6 @@
 package vcmsa.ci.historyapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -23,6 +24,22 @@ class Review : AppCompatActivity() {
         val tvReview = findViewById<TextView>(R.id.tvReview)
         val btnExitApp = findViewById<Button>(R.id.btnExitApp)
 
+        val intent: Intent = intent
+        val historyQuestions = intent.getStringArrayExtra("historyQuestions")
+        val historyAnswers = intent.getStringArrayExtra("historyAnswers")
+
+        //AI used**
+        if (historyQuestions != null && historyAnswers != null) {
+            val combinedArray = buildString {
+                for (i in historyQuestions.indices) {
+                    append("${historyQuestions[i]} \nAnswer: ${historyAnswers[i]}\n\n")
+                }
+            }
+            //displays array
+            tvReview.text = combinedArray
+        } else {
+            tvReview.text = "No data given"
+        }
         //Declaring the exit button to exit the app
         btnExitApp.setOnClickListener {
             finish()

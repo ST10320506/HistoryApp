@@ -31,7 +31,7 @@
             android:id="@+id/btnExitApp"
             android:layout_width="163dp"
             android:layout_height="65dp"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="#99662F"
             android:text="Exit App"
             android:textSize="20sp"
@@ -41,15 +41,16 @@
 
         <TextView
             android:id="@+id/tvReview"
-            android:layout_width="395dp"
-            android:layout_height="347dp"
-            android:layout_marginTop="48dp"
+            android:layout_width="389dp"
+            android:layout_height="482dp"
+            android:layout_marginTop="28dp"
             android:background="#FAF0E4"
             android:text="Array"
-            android:textAlignment="center"
+            android:textAlignment="viewStart"
             android:textSize="20sp"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.444"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvReviewTitle" />
 
@@ -57,7 +58,7 @@
             android:id="@+id/tvReviewTitle"
             android:layout_width="385dp"
             android:layout_height="91dp"
-            android:layout_marginTop="84dp"
+            android:layout_marginTop="36dp"
             android:background="#F5F7FA"
             android:fontFamily="@font/archivo_medium"
             android:text="Review Questions and Answers"

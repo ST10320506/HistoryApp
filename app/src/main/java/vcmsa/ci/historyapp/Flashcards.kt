@@ -121,6 +121,8 @@ class Flashcards : AppCompatActivity() {
                     val intent = Intent(this, Score::class.java)
                         .putExtra("score", score)
                         .putExtra("name", name)
+                        .putExtra("historyQuestions", historyQuestions)
+                        .putExtra("historyAnswers", historyAnswers)
                     startActivity(intent)
                     finish()
                 }
