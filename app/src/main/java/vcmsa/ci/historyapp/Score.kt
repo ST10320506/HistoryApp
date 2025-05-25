@@ -1,0 +1,45 @@
+package vcmsa.ci.historyapp
+
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+
+class Score : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_score)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }//end of ViewCompat
+
+        //Declaring the GUI variables
+        val tvScore = findViewById<TextView>(R.id.tvScore)
+        val btnExit = findViewById<Button>(R.id.btnExit)
+        val btnReviewAnswers = findViewById<Button>(R.id.btnReviewAnswers)
+
+        //Intent is created to pass and display the users score on the score page
+        //Reference: https://youtu.be/K13fR2RHTak - Liehan Els, 2025. Coding up the Quiz app with lots of debugging. [video online] Available at: <https://youtu.be/K13fR2RHTak> [Accessed 21 May 2025].
+        val score = intent.getIntExtra("score", 0)
+        tvScore.text = "Your score is $score out of 5"
+
+        //Declaring the exit button to exit the app once clicked
+        btnExit.setOnClickListener {
+            finish()
+        }
+
+        //Declaring the review answers button to navigate to the review screen once clicked
+        btnReviewAnswers.setOnClickListener {
+            val intent = Intent(this, Review::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }//end of onCreate
+}//end of Score Activity

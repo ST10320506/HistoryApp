@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -24,14 +25,18 @@ class MainActivity : AppCompatActivity() {
         val edtName = findViewById<EditText>(R.id.edtName)
         val btnNextPage = findViewById<Button>(R.id.btnNextPage)
 
-        //getting data from the user
-        //Reference: coding up quiz app
-        val name = edtName.text.toString()
-
-        //navigate to the next page
         btnNextPage.setOnClickListener {
-            //passing data of 'name' to the next screen
-            //reference:
+            //Getting data from the user
+            //Reference: coding up quiz app
+            val name = edtName.text.toString()
+
+            //check if name is empty
+            if(name.isEmpty()){
+                //Display a toast message if the user hasn't entered their name
+                Toast.makeText(this, "Please enter your name", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            //start next page
             val intent = Intent(this, WelcomeScreen::class.java)
             intent.putExtra("name", name)
             startActivity(intent)

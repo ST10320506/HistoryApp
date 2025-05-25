@@ -7,4 +7,100 @@
     android:layout_height="match_parent"
     tools:context=".Flashcards">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/imgBackgroundThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/mapbackground" />
+
+        <TextView
+            android:id="@+id/tvQuestionsHeading"
+            android:layout_width="206dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="56dp"
+            android:background="#F5F7FA"
+            android:fontFamily="@font/archivo_medium"
+            android:text="Questions"
+            android:textAlignment="center"
+            android:textColor="#99662F"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvHistoryQuestions"
+            android:layout_width="344dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="104dp"
+            android:background="#FAF0E4"
+            android:text="History Questions"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvQuestionsHeading" />
+
+        <RadioGroup
+            android:id="@+id/rdgrpAnswers"
+            android:layout_width="405dp"
+            android:layout_height="129dp"
+            android:layout_marginTop="76dp"
+            android:background="#FAF0E4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHistoryQuestions">
+
+            <RadioButton
+                android:id="@+id/rdBtnTrue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="True"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/rdBtnFalse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="False"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnNextQuestion"
+            android:layout_width="198dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="76dp"
+            android:backgroundTint="#99662F"
+            android:text="Next Question"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rdgrpAnswers" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

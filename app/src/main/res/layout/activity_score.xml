@@ -5,70 +5,85 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WelcomeScreen" >
+    tools:context=".Score">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imgBackgroundTwo"
+            android:id="@+id/imgBackgroundFour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/mapbackground" />
 
         <TextView
-            android:id="@+id/tvWelcomeName"
-            android:layout_width="363dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="124dp"
+            android:id="@+id/tvScore"
+            android:layout_width="304dp"
+            android:layout_height="111dp"
+            android:layout_marginTop="140dp"
             android:background="#F5F7FA"
             android:fontFamily="@font/archivo_medium"
+            android:text="Score"
             android:textAlignment="center"
             android:textColor="#99662F"
             android:textSize="34sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvAppDescription"
-            android:layout_width="390dp"
-            android:layout_height="149dp"
-            android:layout_marginTop="124dp"
-            android:background="#FAF0E4"
-            android:text="The History App was designed to help users study with flashcards, there are five questions with 'true/false' answers that need to be ticked. At the end of the flashcards you will be scored out of 5 and you will receive feedback. Enjoy!"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.448"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvWelcomeName" />
+            app:layout_constraintTop_toTopOf="@+id/imgBackgroundFour" />
 
         <Button
-            android:id="@+id/btnStartQuiz"
-            android:layout_width="175dp"
-            android:layout_height="69dp"
-            android:layout_marginTop="84dp"
+            android:id="@+id/btnExit"
+            android:layout_width="137dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="48dp"
             android:backgroundTint="#99662F"
-            android:text="Start Quiz"
+            android:text="Exit"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAppDescription" />
+            app:layout_constraintTop_toBottomOf="@+id/tvScoreDescription" />
+
+        <Button
+            android:id="@+id/btnReviewAnswers"
+            android:layout_width="205dp"
+            android:layout_height="67dp"
+            android:layout_marginTop="48dp"
+            android:backgroundTint="#99662F"
+            android:text="Review Answers"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnExit" />
+
+        <TextView
+            android:id="@+id/tvScoreDescription"
+            android:layout_width="357dp"
+            android:layout_height="132dp"
+            android:layout_marginTop="36dp"
+            android:background="#FAF0E4"
+            android:text="If you would like to exit the app, click the 'Exit' button. If you wish to review the questions and the correct answers, click 'Review Answers' to be directed to the Review page."
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvScore" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

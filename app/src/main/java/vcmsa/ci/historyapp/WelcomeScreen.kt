@@ -20,7 +20,7 @@ class WelcomeScreen : AppCompatActivity() {
             insets
         }//end of ViewCompat
 
-        //declaring variable used from main activity
+        //Declaring variable used from main activity
         val intent: Intent = intent
         val name = intent.getStringExtra("name")
 
@@ -28,14 +28,14 @@ class WelcomeScreen : AppCompatActivity() {
         val tvWelcomeName = findViewById<TextView>(R.id.tvWelcomeName)
         val btnStartQuiz = findViewById<Button>(R.id.btnStartQuiz)
 
-        //displays personalized welcome message to the user
-        tvWelcomeName.text = "Welcome $name !"
+        //Displays personalized welcome message to the user****
+        tvWelcomeName.text = "Welcome ${name ?: "User"}!"
 
-        //navigate to the next page
+        //Navigate to the next page
         btnStartQuiz.setOnClickListener {
             val intent = Intent(this, Flashcards::class.java)
             startActivity(intent)
             finish()
         }
     }//end of onCreate
-}//end of WelcomeScreen
+}//end of WelcomeScreen Activity
