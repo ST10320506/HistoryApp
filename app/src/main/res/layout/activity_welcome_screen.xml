@@ -45,8 +45,8 @@
 
         <TextView
             android:id="@+id/tvAppDescription"
-            android:layout_width="390dp"
-            android:layout_height="149dp"
+            android:layout_width="398dp"
+            android:layout_height="161dp"
             android:layout_marginTop="72dp"
             android:background="#FAF0E4"
             android:text="The History App was designed to help users study with flashcards, there are five questions with 'true/false' answers that need to be ticked. At the end of the flashcards you will be scored out of 5 and you will receive feedback. Enjoy!"

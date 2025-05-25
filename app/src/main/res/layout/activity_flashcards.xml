@@ -48,8 +48,8 @@
 
         <TextView
             android:id="@+id/tvHistoryQuestions"
-            android:layout_width="344dp"
-            android:layout_height="100dp"
+            android:layout_width="364dp"
+            android:layout_height="88dp"
             android:layout_marginTop="72dp"
             android:background="#FAF0E4"
             android:text="History Questions"
