@@ -29,6 +29,7 @@ class Score : AppCompatActivity() {
         //AI was used
         //Prompt used: "Please fix the error in this code to pass the history questions and answers array from the flashcards screen to the review screen and display it on the review screen.
         //80% of my code was used.
+        //Getting the data from the flashcard screen and passes the data in array from the flashcards screen to the review screen
         val historyQuestions = intent.getStringArrayExtra("historyQuestions")
         val historyAnswers = intent.getStringArrayExtra("historyAnswers")
 
@@ -43,9 +44,11 @@ class Score : AppCompatActivity() {
         //Prompt used: help to change this code in the score screen to display 'great job name!' on score ranging between 3-5 and to display 'keep practising 'name'' on scores lower than 3.
         //70% of my code was used.
         if(score in 3..5) {
+            //Displays 'great job!' when user's score is between 3 and 5
             tvMessage.text = "Great Job ${name ?: "User"}!"
         }
         else{
+            //Displays 'keep practising when user's score is lower than 3
             tvMessage.text = "Keep practising ${name ?: "User"}."
         }
 

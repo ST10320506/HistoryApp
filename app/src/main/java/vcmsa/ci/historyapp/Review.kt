@@ -32,6 +32,7 @@ class Review : AppCompatActivity() {
         //AI was used
         //Prompt used: "Please fix this code to pass the array correctly: Flashcard screen code, Score screen code and Review screen code.
         //80% of my code was used.
+        //Displays the array passed from the flashcards screen, through the score screen to be displayed on the review screen
         if (historyQuestions != null && historyAnswers != null) {
             val combinedArray = buildString {
                 for (i in historyQuestions.indices) {
