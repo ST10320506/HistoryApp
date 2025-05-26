@@ -42,3 +42,5 @@ This application aims to make studying fun and less stressful as it promotes act
 
 1. **Clone the repository:** ```bash
    git clone [https://github.com/ST10320506/HistoryApp.git]
+2. **Android Studio**
+3. **Blustacks Emulator**
