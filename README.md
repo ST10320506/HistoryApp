@@ -43,4 +43,6 @@ This application aims to make studying fun and less stressful as it promotes act
 1. **Clone the repository:** ```bash
    git clone [https://github.com/ST10320506/HistoryApp.git]
 2. **Android Studio**
-3. **Blustacks Emulator**
+   used to code the Kotlin application 
+4. **Blustacks Emulator**
+   used to run the application using a samsung SE virtual phone 
