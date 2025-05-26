@@ -26,7 +26,7 @@ class Score : AppCompatActivity() {
         val btnExit = findViewById<Button>(R.id.btnExit)
         val btnReviewAnswers = findViewById<Button>(R.id.btnReviewAnswers)
 
-        //AI used
+        //AI was used
         //Prompt used: "Please fix the error in this code to pass the history questions and answers array from the flashcards screen to the review screen and display it on the review screen.
         //80% of my code was used.
         val historyQuestions = intent.getStringArrayExtra("historyQuestions")
@@ -39,7 +39,7 @@ class Score : AppCompatActivity() {
         val intent: Intent = intent
         val name = intent.getStringExtra("name")
 
-        //AI used
+        //AI was used
         //Prompt used: help to change this code in the score screen to display 'great job name!' on score ranging between 3-5 and to display 'keep practising 'name'' on scores lower than 3.
         //70% of my code was used.
         if(score in 3..5) {

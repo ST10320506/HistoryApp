@@ -29,7 +29,7 @@ class Review : AppCompatActivity() {
         val historyQuestions = intent.getStringArrayExtra("historyQuestions")
         val historyAnswers = intent.getStringArrayExtra("historyAnswers")
 
-        //AI used
+        //AI was used
         //Prompt used: "Please fix this code to pass the array correctly: Flashcard screen code, Score screen code and Review screen code.
         //80% of my code was used.
         if (historyQuestions != null && historyAnswers != null) {
